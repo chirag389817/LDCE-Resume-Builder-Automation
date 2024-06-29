@@ -14,11 +14,31 @@ This is a Python script created to automate the form filling of the [LDCE Resume
 
     Add [path/to/your/chromedriver.exe]() in Environment Variables.
 
-2. **Modify Data**
+2. **Virtual Environment setup (Optional)**
+
+    Create virtual environment:
+
+    ```
+    python -m venv venv
+    ```
+
+    Activate virtual environment (cmd)
+
+    ```
+    .\venv\Scripts\activate
+    ```
+
+3. **Install the dependencies**
+
+    ```
+    pip install -r r.txt
+    ```
+
+4. **Modify Data**
 
     Change the data in the `src/Data.py` file according to your requirements.
 
-3. **Run the Script**
+5. **Run the Script**
 
     Run the `src/App.py` file using the following Python command:
 
