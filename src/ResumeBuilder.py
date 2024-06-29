@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver. common. by import By
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.action_chains import ActionChains
 import Data
 
 
@@ -86,3 +87,7 @@ def fill_achievements()->None:
     for i in range(0,len(Data.achievements)):
         btn_addAchievements.click()
         fill_input(Data.achievements[i], f"/html/body/div/div/div/div/div[9]/div[2]/div[{i+1}]/input")
+
+def scroll_to_resume()->None:
+    resume_element = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[11]")
+    driver.execute_script("arguments[0].scrollIntoView(true);", resume_element);

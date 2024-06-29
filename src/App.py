@@ -11,4 +11,5 @@ if __name__ == "__main__":
     builder.fill_experiences()
     builder.fill_hobbies()
     builder.fill_achievements()
+    builder.scroll_to_resume()
     input()
