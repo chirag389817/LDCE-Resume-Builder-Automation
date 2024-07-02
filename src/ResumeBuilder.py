@@ -33,21 +33,20 @@ def fill_basic_details()->None:
 
 def fill_skills()->None:
     btn_addSkill = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[3]/div[2]/button")
-    for i in range(0,len(Data.skills)):
+    for i, skill in enumerate(Data.skills):
         btn_addSkill.click()
-        fill_input(Data.skills[i], f"/html/body/div/div/div/div/div[3]/div[2]/div[{i+1}]/input")
+        fill_input(skill, f"/html/body/div/div/div/div/div[3]/div[2]/div[{i+1}]/input")
 
 def fill_interests()->None:
     btn_addInterest = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[4]/div[2]/button")
-    for i in range(0,len(Data.area_of_interests)):
+    for i, interest in enumerate(Data.area_of_interests):
         btn_addInterest.click()
-        fill_input(Data.area_of_interests[i], f"/html/body/div/div/div/div/div[4]/div[2]/div[{i+1}]/input")
+        fill_input(interest, f"/html/body/div/div/div/div/div[4]/div[2]/div[{i+1}]/input")
 
 def fill_educations()->None:
     btn_addEdu = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[5]/button")
-    for i in range(0,len(Data.educations)):
+    for i,education in enumerate(Data.educations):
         btn_addEdu.click()
-        education = Data.educations[i]
         fill_input(education.get('college'), f"/html/body/div/div/div/div/div[5]/div[{i+2}]/div[1]/input")
         fill_input(education.get('degree'), f"/html/body/div/div/div/div/div[5]/div[{i+2}]/div[2]/input")
         fill_input(education.get('percentage'), f"/html/body/div/div/div/div/div[5]/div[{i+2}]/div[3]/input")
@@ -56,8 +55,7 @@ def fill_educations()->None:
 
 def fill_projects()->None:
     btn_addProject = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[6]/button")
-    for i in range(0,len(Data.projects)):
-        project = Data.projects[i]
+    for i, project in enumerate(Data.projects):
         btn_addProject.click()
         fill_input(project.get('title'), f"/html/body/div/div/div/div/div[6]/div[{i+2}]/div[1]/input")
         fill_input(project.get('link'), f"/html/body/div/div/div/div/div[6]/div[{i+2}]/div[2]/input")
@@ -65,8 +63,7 @@ def fill_projects()->None:
 
 def fill_experiences()->None:
     btn_addExperience = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[7]/button")
-    for i in range(0,len(Data.experiences)):
-        experience = Data.experiences[i]
+    for i, experience in enumerate(Data.experiences):
         btn_addExperience.click()
         fill_input(experience.get('company'), f"/html/body/div/div/div/div/div[7]/div[{i+2}]/div[1]/input")
         fill_input(experience.get('designation'), f"/html/body/div/div/div/div/div[7]/div[{i+2}]/div[2]/input")
@@ -78,16 +75,16 @@ def fill_experiences()->None:
 
 def fill_hobbies()->None:
     btn_addHobby = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[8]/div[2]/button")
-    for i in range(0,len(Data.hobbies)):
+    for i,hobby in enumerate(Data.hobbies):
         btn_addHobby.click()
-        fill_input(Data.hobbies[i], f"/html/body/div/div/div/div/div[8]/div[2]/div[{i+1}]/input")
+        fill_input(hobby, f"/html/body/div/div/div/div/div[8]/div[2]/div[{i+1}]/input")
 
 def fill_achievements()->None:
     btn_addAchievements = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[9]/div[2]/button")
-    for i in range(0,len(Data.achievements)):
+    for i,achievement in enumerate(Data.achievements):
         btn_addAchievements.click()
-        fill_input(Data.achievements[i], f"/html/body/div/div/div/div/div[9]/div[2]/div[{i+1}]/input")
+        fill_input(achievement, f"/html/body/div/div/div/div/div[9]/div[2]/div[{i+1}]/input")
 
 def scroll_to_resume()->None:
     resume_element = driver.find_element(By.XPATH, "/html/body/div/div/div/div/div[11]")
-    driver.execute_script("arguments[0].scrollIntoView(true);", resume_element);
+    driver.execute_script("arguments[0].scrollIntoView(true);", resume_element)
